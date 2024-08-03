@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <!-- Weather heading -->
+        <div class="heading">
+            <h1 style="text-align: center; margin: 0px; margin-bottom: 1rem; font-size: 54px;">Weather App</h1>
+            <form class="search_city">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="city" placeholder="Enter City Name...">
+            </form>
+        </div>
+
+        <!-- weather body  -->
+         <section class="weather_body">
+                <h1 id="city_name" style="margin: 0px; font-size: 34px;"></h1>
+                <p class="city_date_time" style="margin: 7px;"></p>
+
+            <div class="weather_detail">
+                <div class="icon"></div>
+                <p class="weather_forecast"></p>
+                <p class="temperature" style="margin: 2px;"></p>
+                <div class="minmax_temp">
+                    <p class="min_temp" style="margin: 0%; "></p>
+                    <p class="max_temp" style="margin: 0%;"></p>
+                </div>
+            </div>
+         </section>
+
+         <!-- weather extra detail  -->
+          <section class="weather_extra_detail">
+            <div class="weather_card">
+                <i class="fa-solid fa-temperature-three-quarters" style="font-size:34px; padding: 5px;"></i>
+                <div style="padding: 4px;">
+                <p style="margin: 0px; padding:0px;">Feels like</p>
+                <p class="feels_like" style="margin: 0px; padding: 0px;"></p>
+                </div>
+            </div>
+
+
+            <div class="weather_card">
+                <i class="fa-solid fa-droplet" style="font-size:34px; padding: 5px;"></i>
+                <div style="padding: 4px;">
+                <p style="margin: 0px; padding: 0px;">Humidity</p>
+                <p class="humidity" style="margin: 0px; padding: 0px;"></p>
+                </div>
+            </div>
+
+            <div class="weather_card">
+                <i class="fa-solid fa-wind" style="font-size:34px; padding: 5px;"></i>
+                <div style="padding: 4px;">
+                <p style="margin: 0px; padding: 0px;">Wind</p>
+                <p class="wind" style="margin: 0px; padding: 0px;"></p>
+                </div>
+            </div>
+
+
+            <div class="weather_card">
+                <i class="fa-solid fa-temperature-three-quarters" style="font-size:34px; padding: 5px;"></i>
+                <div style="padding: 4px;">
+                <p style="margin: 0px; padding: 0px;">Pressure</p>
+                <p class="pressure" style="margin: 0px; padding: 0px;"></p>
+                </div>
+            </div>
+          </section>
+    </section>
+
+    <script src="weather.js"></script>
+</body>
+</html>
