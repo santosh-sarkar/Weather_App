@@ -25,6 +25,9 @@ const getCountry = (countryCode)=>{
     const regionNamesInEnglish = new Intl.DisplayNames(['en'], { type: 'region' });
     return regionNamesInEnglish.of(countryCode)
 }
+const convertIntoCelcius = (kelvin)=>{
+    return (kelvin - 273.15).toFixed(2)
+}
 
 const fetchWeather = async ()=>{
     let weatherApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=15ea46a14f270fb231641e0b56bcb220`
@@ -33,15 +36,16 @@ const fetchWeather = async ()=>{
         let data = await response.json()
         
         let { name, main, dt, sys, weather, wind}=data
-
+        console.log(data);
+        
         put_city.innerText=`${name}, ${getCountry(sys.country)}`
         date_time.innerText = `Last updated: ${new Date(dt*1000).toLocaleString()}`
         weather_forecast.innerText = `${weather[0].main}`
         weather_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="">`
-        temperature.innerText = `Temperature: ${main.temp}°K`
-        min_temperature.innerText = `Min: ${main.temp_min}°K`
-        max_temperature.innerText = `Max: ${main.temp_max}°K`
-        feels_like.innerText = `${main.feels_like}°K`
+        temperature.innerText = `Temperature: ${convertIntoCelcius(main.temp)}°C`
+        min_temperature.innerText = `Min: ${convertIntoCelcius(main.temp_min)}°C`
+        max_temperature.innerText = `Max: ${convertIntoCelcius(main.temp_max)}°C`
+        feels_like.innerText = `${convertIntoCelcius(main.feels_like)}°C`
         humidity.innerText = `${main.humidity}%`
         winds.innerText = `${wind.speed} m/s`
         pressure.innerText = `${main.pressure} hPa`
