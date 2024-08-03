@@ -38,10 +38,10 @@ const fetchWeather = async ()=>{
         date_time.innerText = `Last updated: ${new Date(dt*1000).toLocaleString()}`
         weather_forecast.innerText = `${weather[0].main}`
         weather_icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png" alt="">`
-        temperature.innerText = `Temperature: ${main.temp}°F`
-        min_temperature.innerText = `Min: ${main.temp_min}°F`
-        max_temperature.innerText = `Max: ${main.temp_max}°F`
-        feels_like.innerText = `${main.feels_like}°F`
+        temperature.innerText = `Temperature: ${main.temp}°K`
+        min_temperature.innerText = `Min: ${main.temp_min}°K`
+        max_temperature.innerText = `Max: ${main.temp_max}°K`
+        feels_like.innerText = `${main.feels_like}°K`
         humidity.innerText = `${main.humidity}%`
         winds.innerText = `${wind.speed} m/s`
         pressure.innerText = `${main.pressure} hPa`
